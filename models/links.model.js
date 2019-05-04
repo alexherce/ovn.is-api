@@ -19,7 +19,7 @@ exports.create = function(params) {
 
     db.get(db.WRITE, function(err, connection) {
       if (err) {
-        connection.release();
+        if (connection) connection.release();
         console.log(err);
         return reject(err);
       }
