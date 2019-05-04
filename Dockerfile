@@ -12,12 +12,12 @@ COPY . /opt/app
 # set application PORT and expose docker PORT
 ENV PORT 1494
 ENV NODE_ENV="production"
-ENV DB_HOST = "35.239.45.2"
+ENV DB_HOST = "138.197.214.161"
 ENV PRODUCTION_DB = "ovnis"
-ENV DB_WRITE_1_USR = "ovnis-write"
-ENV DB_WRITE_1_PWD = "ge3KBK3Ae#aFp$6J"
-ENV DB_READ_1_USR = "ovnis-read"
-ENV DB_READ_1_PWD = "B&7mFLj*Q33vmceq"
+ENV DB_WRITE_1_USR = "ovnis_write"
+ENV DB_WRITE_1_PWD = "yp=+XQcBCbg4wFQ53#Decdvn73&HEpza"
+ENV DB_READ_1_USR = "ovnis_read"
+ENV DB_READ_1_PWD = "8cYrAzT&vC7L36pbw7W!!Ujkt_zLrz7M"
 
 EXPOSE 1494
 
