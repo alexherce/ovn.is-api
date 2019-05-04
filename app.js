@@ -15,6 +15,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', "GET, POST");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Accept, x-ovnis-token");
+  next();
+});
+
 app.use('/', indexRouter);
 
 // Connect to MySQL on start
@@ -24,13 +31,6 @@ db.connect(db.MODE_PRODUCTION, function(err) {
   } else {
     console.log('Connected to MySQL!');
   }
-});
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Methods', "GET, POST");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Accept, x-ovnis-token");
-  next();
 });
 
 // catch 404 and forward to error handler
